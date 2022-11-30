@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,15 @@
 </head>
 <body class="hold-transition login-page">
   <?php
+  if (isset($_SESSION['success'])) {
     echo $_SESSION['success'];
+    unset($_SESSION['success']);
+  }
+  if (isset($_SESSION['error'])) {
+    echo $_SESSION['error'];
+    unset($_SESSION['error']);
+  }
+
   ?>
 <div class="login-box">
   <!-- /.login-logo -->
